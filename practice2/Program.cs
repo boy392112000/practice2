@@ -10,10 +10,8 @@ namespace practice2
     {
         static void Main(string[] args)
         {
-
-            int number = 0; // 要判斷的數
-
-            for(int i = 1; i <999; i++)
+            int number = 0; // 要判断的數
+            for(int i = 1; i <101; i++)
             {
                 number = i;
                 if (Judge.IsPrime(number))
