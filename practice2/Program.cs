@@ -11,7 +11,7 @@ namespace practice2
         static void Main(string[] args)
         {
 
-            int number = 0; // 要判斷的数
+            int number = 0; // 要判斷的數
 
             for(int i = 1; i <999; i++)
             {
