@@ -10,6 +10,12 @@ namespace practice2
     {
         static void Main(string[] args)
         {
+            int number = 197; // 要判断的数
+
+            if (Judge.IsPrime(number))
+                Console.WriteLine(number + " 是質數");
+            else
+                Console.WriteLine(number + " 不是質數");
         }
     }
 }
