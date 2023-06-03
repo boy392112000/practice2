@@ -10,6 +10,11 @@ namespace practice2
     {
         static void Main(string[] args)
         {
+            
+        }
+        public static void async()
+        {
+            Console.WriteLine();
         }
     }
 }
