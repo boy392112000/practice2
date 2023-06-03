@@ -12,16 +12,17 @@ namespace practice2
         {//判斷是不是質數若value < 2, 傳回false
 
             bool result = true;
+
+            if (value <= 2) { result = false; }
             
+
             for (var i = 2; i <= value; i++)
             {
                 if (value % i == 0 && value != i)
                 {
                     result = false;
                 }
-               
             }
-
            return result;
         }
     }
