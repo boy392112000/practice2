@@ -16,7 +16,7 @@ namespace practice2
             if (value <= 2) { result = false; }
             
 
-            for (var i = 2; i <= value; i++)
+            for (var i = 2; i < value; i++)
             {
                 if (value % i == 0 && value != i)
                 {
