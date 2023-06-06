@@ -59,9 +59,19 @@ namespace Date_Calculation
             Console.WriteLine(LeapYear.GetNextSunday(date).ToString("yyyy/MM/dd"));
 
             //<--列出某一年的所有星期日-->
+            Console.WriteLine("總共有 : " + LeapYear.GetAllSunday(date) + "星期日");
 
+            //計算兩個日期相距多少天(有小數點)
+            DateTime start = new DateTime (2023,06,05);
+            DateTime end = new DateTime(2023,06,07);
+            Console.WriteLine("日期相差 : " + LeapYear.CountdownDays(start,end));
 
+            //刪除毫秒
+            DateTime now = DateTime.Now;
+            DateTime truncatedDateTime = LeapYear.DeleteSeconds(now);
 
+            Console.WriteLine("原始時間："+ now);
+            Console.WriteLine("刪除後 : " + truncatedDateTime);
         }
     }
 }

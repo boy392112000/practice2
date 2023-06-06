@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -51,19 +52,44 @@ namespace Date_Calculation
 
             return value;
         }
-        //一年有多少個星期日  明天再補
-        public static DateTime GetAllSunday(DateTime velue)
+        //一年有多少個星期日  
+        public static int GetAllSunday(DateTime value)
         {
-            var daysInMonth = DateTime.DaysInMonth(velue.Year, velue.Month);
-            var nextMonth = velue.Day;
+            
+            DateTime getdate = new DateTime(value.Year, 1, 1);
+            var count = 0; 
+            var Calculate = GetNextSunday(getdate);
 
-            for (int i = 0; i < 5; i++)
+            var Target = getdate.AddYears(1); 
+            while (Calculate < Target)
             {
-                 GetNextSunday(velue);
+                Calculate = GetNextSunday(Calculate.AddDays(7));
+                
+                count++;
+
             }
 
-
+            return count;
         }
 
+        //計算兩個日期相距多少天(有小數點)
+        public static double CountdownDays(DateTime startDate, DateTime endDate)
+        {
+            TimeSpan difference = endDate - startDate;
+            return difference.TotalDays;
+        }
+        //計算兩個日期相距多少小時(有小數點)
+        public static double Countdownhours(DateTime startDate, DateTime endDate)
+        {
+            TimeSpan difference = endDate - startDate;
+            return difference.TotalHours;
+        }
+
+        // 刪除 DateTime 的秒和毫秒
+        public static DateTime DeleteSeconds(DateTime value)
+        {
+            return value.AddMilliseconds(-value.Millisecond).AddSeconds(-value.Second); 
+            
+        }
     }
 }
